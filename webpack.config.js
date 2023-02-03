@@ -37,7 +37,7 @@ module.exports = (_, argv) => {
       },
     ],
     resolve: {
-      extensions: ['.js', '.vue'],
+      extensions: ['.js', '.vue', '.ts'],
       alias: {
         '@': path.resolve(__dirname, 'src'),
         src: path.resolve(__dirname, 'src'),

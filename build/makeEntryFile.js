@@ -17,18 +17,18 @@ function genEntryJs() {
       .replace(/\/index\.vue/, '')
     const fileName = tmpPath.split('/').join('_')
     // 生成entry js文件
-    let entryFile = path.resolve(entryPath, fileName + '.js')
+    let entryFile = path.resolve(entryPath, fileName + '.ts') //ts
     fse.outputFileSync(
       entryFile,
-      `import App from 'views/${tmpPath}/index.vue'
-import dolphinweex from 'js/dolphinweex.js'
-import exceptionReport from 'js/exceptionReport.js'
-import store from '@/store'
+
+      `import Vue from 'vue'
+import App from '../src/views/${tmpPath}/index.vue'
+import dolphinweex from '../src/js/dolphinweex.js'
+import exceptionReport from '../src/js/exceptionReport.js'
 Vue.use(dolphinweex)
 Vue.use(exceptionReport)
 new Vue({
   el: '#root',
-  store,
   render: h => h(App),
 })
 `

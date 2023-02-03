@@ -28,6 +28,11 @@ module.exports = {
     weex: true,
   },
   parserOptions: {
+    parser: 'babel-eslint',
     ecmaVersion: 2019,
+    ecmaFeatures: {
+      // 支持装饰器
+      legacyDecorators: true,
+    },
   },
 }
