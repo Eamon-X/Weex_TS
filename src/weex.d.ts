@@ -9,4 +9,5 @@ declare namespace we {
 }
 
 declare var weex: we.instance
+declare var Vue: any
 declare module 'weex-vue-render';

@@ -13,7 +13,7 @@
     // 以严格模式解析
     "strict": true,
     // 采用的模块系统
-    "module": "esnext",
+    "module": "es2015",
     // 如何处理模块
     "moduleResolution": "node",
     // 编译输出目标 ES 版本

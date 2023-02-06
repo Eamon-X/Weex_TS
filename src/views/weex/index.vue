@@ -57,7 +57,8 @@
     </div>
 
     <debug-window /> -->
-  <div class="page">
+  <div>
+    <div class="page"></div>
     <text class="text-title">{{ temp }}</text>
   </div>
 </template>
@@ -72,21 +73,51 @@
 // import debugUtil from '../../util/debugUtil'
 // import superMoreUtil from '../../util/superMoreUtil'
 import { Component, Vue } from 'vue-property-decorator'
+// import Vue from 'vue'
+// // import Vue from 'vue'
+// // import Component from 'vue-class-component'
 @Component({
-  name: 'weex',
+  name: 'App',
 })
-export default class Weex extends Vue {
+export default class App extends Vue {
   temp: number = 1
   // platform: string = platform
   // statusBarHeight: number = statusBarHeight
+  beforeCreate(): void {
+    console.log('beforeCreate')
+  }
+  created(): void {
+    console.log('created')
+  }
+  beforeMount(): void {
+    console.log('beforeMount')
+  }
+  mounted(): void {
+    console.log('mounted')
+  }
+  beforeDestroy(): void {
+    console.log('beforeDestroy')
+  }
+  destroyed(): void {
+    console.log('destroyed ')
+  }
 }
-// export default {
+// console.log('哈哈哈')
+// console.log('导出' + App) //导出function (t){this._init(t)}
+// console.log('嘻嘻嘻')
+// console.log('导出' + Component) //导出function b(t){return"function"==typeof t?m(t):function(e){return m(e,t)}}
+
+// export default Vue.extend({
+//   data: () => ({
+//     temp: 0,
+//   }),
+// })
 //   // components: {
 //   //   DofMinibar,
 //   //   DofButton,
 //   // },
 //   // mixins: [pageBase],
-//   data: () => ({
+// data: () => ({
 //     // subTitle: '',
 //     // leftButton,
 //     // more,
@@ -102,8 +133,8 @@ export default class Weex extends Vue {
 //     //   routerConfigUrl: `${weex.config.bundleUrl.split('weex.js')[0]}more.js`,
 //     //   bluetoothEnter: false,
 //     // },
-//     temp: 0,
-//   }),
+//   temp: 0,
+// }),
 //   // async created() {
 //   await this.init()
 //   this.$bridge.addEventListener('receiveMessage', data => {
@@ -188,7 +219,9 @@ export default class Weex extends Vue {
 
 <style scoped>
 .page {
-  background: red;
+  background-color: red;
+  width: 200px;
+  height: 200px;
 }
 .logo {
   width: 150px;

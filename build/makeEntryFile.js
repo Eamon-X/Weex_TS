@@ -21,16 +21,19 @@ function genEntryJs() {
     fse.outputFileSync(
       entryFile,
 
-      `import Vue from 'vue'
-import App from '../src/views/${tmpPath}/index.vue'
+      `import App from '../src/views/${tmpPath}/index.vue'
 import dolphinweex from '../src/js/dolphinweex.js'
 import exceptionReport from '../src/js/exceptionReport.js'
-Vue.use(dolphinweex)
-Vue.use(exceptionReport)
-new Vue({
-  el: '#root',
-  render: h => h(App),
-})
+try {
+  Vue.use(dolphinweex)
+  Vue.use(exceptionReport)
+  new Vue({
+    el: '#root',
+    render: h => h(App)
+  })
+} catch (e: any) {
+  console.log("newVueError!:" + e.toString())
+}
 `
     )
     // 加入到entry，用于提供给webpack
